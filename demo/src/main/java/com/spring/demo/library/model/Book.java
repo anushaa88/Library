@@ -1,4 +1,4 @@
-package com.cis.batch33.library.model;
+package com.spring.demo.library.model;
 
 public class Book {
 

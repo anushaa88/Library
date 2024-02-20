@@ -1,6 +1,6 @@
-package com.cis.batch33.library.service;
+package com.spring.demo.library.service;
 
-import com.cis.batch33.library.model.Member;
+import com.spring.demo.library.model.Member;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;

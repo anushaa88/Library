@@ -1,7 +1,7 @@
-package com.cis.batch33.library.controller;
+package com.spring.demo.library.controller;
 
-import com.cis.batch33.library.model.Book;
-import com.cis.batch33.library.service.BookService;
+import com.spring.demo.library.model.Book;
+import com.spring.demo.library.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

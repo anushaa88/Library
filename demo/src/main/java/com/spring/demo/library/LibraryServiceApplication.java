@@ -1,4 +1,4 @@
-package com.cis.batch33.library;
+package com.spring.demo.library;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
