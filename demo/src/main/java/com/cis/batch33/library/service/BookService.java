@@ -3,10 +3,11 @@ package com.cis.batch33.library.service;
 import com.cis.batch33.library.model.Book;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 @Service
 public class BookService {
@@ -14,35 +15,33 @@ public class BookService {
     private Map<Long, Book> bookMap = new HashMap<>();
 
     public Book createBook(Book book) {
-
-        // call the database
+        // Simulating database insert
         Long bookId = new Random().nextLong();
         book.setBookId(bookId);
         bookMap.put(bookId, book);
         return book;
     }
 
-    public Book updateBook(Book book){
-        Long bookId = book.getBookId();
-
-        bookMap.put(bookId,book);
-
-        return book;
+    public Book getBook(Long bookId) {
+        return bookMap.get(bookId);
     }
 
-    public ArrayList<Book> getBooks(){
-        ArrayList<Book> al = new ArrayList<>();
+    public List<Book> getAllBooks() {
+        return bookMap.values().stream().collect(Collectors.toList());
+    }
 
-        for (Long key : bookMap.keySet()) {
-            al.add(bookMap.get(key));
+    public Book updateBook(Long bookId, Book updatedBook) {
+        if (bookMap.containsKey(bookId)) {
+            // Simulating database update
+            updatedBook.setBookId(bookId);
+            bookMap.put(bookId, updatedBook);
+            return updatedBook;
         }
-
-        return al;
+        return null; // Book not found for the given bookId
     }
 
-    public Book deleteBook(Long bookId){
-        Book book = bookMap.remove(bookId);
-        return book;
+    public void deleteBook(Long bookId) {
+        bookMap.remove(bookId);
+        // Simulating database delete
     }
-
 }
